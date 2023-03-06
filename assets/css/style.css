@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+p{
+    font-size: 14px;
+    color: #563d7c;
+}
+
+a {
+    color: peru;
+    text-decoration: none;
+}
+
+a:hover {
+    color: peru;
+    text-decoration: underline;
+}
+
+button {
+    display: inline-block;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 100%;
+    background-color: #563d7c;
+    border-radius: 5px;
+    padding: 2px 10px;
+    color: white;
+    border: 0;
+}
+
+button:hover {
+    background-color: #563d7c;
+    opacity: 0.8;
+}
+
+.choices button {
+    display: block;
+    background-color: black;
+}
+
+input[type="text"] {
+    font-size: 115%;
+}
+
+.wrapper {
+    margin: 100px auto 0 auto;
+}
+
+.start {
+    text-align: center;
+    margin: 100px auto 0 auto;
+}
+.timer {
+    text-align: center;
+    margin: 0 auto;
+}
