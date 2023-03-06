@@ -3,7 +3,7 @@ body {
     font-size: 14px;
 }
 p{
-    font-size: 99px;
+    font-size: 14px;
     color: #563d7c;
 }
 
@@ -37,4 +37,21 @@ button:hover {
 .choices button {
     display: block;
     background-color: black;
+}
+
+input[type="text"] {
+    font-size: 115%;
+}
+
+.wrapper {
+    margin: 100px auto 0 auto;
+}
+
+.start {
+    text-align: center;
+    margin: 100px auto 0 auto;
+}
+.timer {
+    text-align: center;
+    margin: 0 auto;
 }
