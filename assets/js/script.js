@@ -35,8 +35,8 @@ function startTimer() {
     const timer = document.querySelector("#timer");
     currentTime--;
 
-    if (currentTime == 0) {
-      alert("Times up!");
+    if (currentTime === 0) {
+      alert("Time's up!");
       clearInterval(timerInterval);
       endQuiz();
     } else {
@@ -60,42 +60,47 @@ function renderQuestion(questionIndex) {
   const choices = document.createElement("ul");
   choices.id = "choices";
   choices.classList.add("choices");
-
+  // add each choice to the choices div
   for (let [i, choice] of question.choices.entries()) {
     const li = document.createElement("li");
     const button = document.createElement("button");
     button.innerText = choice;
     button.addEventListener("click", () => {
       if (i === question.answerIndex) {
+        // they got it correct
         alert("Correct");
       } else {
+        // they got it wrong
         alert("Wrong");
       }
       if (questionIndex === questions.length - 1) {
+        // last question
         endQuiz();
       } else {
         renderQuestion(questionIndex + 1);
       }
     });
-    li.appendChild(button);
-    choices.appendChild(li);
+    li.append(button);
+    choices.append(li);
   }
 
-  questionDiv.appendChild(questionTitle);
-  questionDiv.appendChild(choices);
+  questionDiv.append(questionTitle);
+  questionDiv.append(choices);
 
-  questionScreen.appendChild(questionDiv);
+  questionScreen.append(questionDiv);
 }
 
 function startQuiz() {
   startTimer();
-
+  // close the start screen
   const startScreen = document.querySelector("#start-screen");
   startScreen.classList.add("hide");
 
   const questionScreen = document.querySelector("#questions");
   questionScreen.classList.remove("hide");
 
+  // open up the questions
+  // render the first question
   renderQuestion(0);
 }
 
@@ -105,12 +110,6 @@ function endQuiz() {
 
   const endScreen = document.querySelector("#end-screen");
   endScreen.classList.remove("hide");
-
-  const score = document.querySelector("#score");
-  const numCorrect = document.querySelectorAll(".correct").length;
-  const percentCorrect = ((numCorrect / questions.length) * 100).toFixed(2);
-
-  score.innerText = `You got ${numCorrect} out of ${questions.length} questions correct (${percentCorrect}%).`;
 }
 
 function init() {
